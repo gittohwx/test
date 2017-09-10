@@ -1,0 +1,95 @@
+.clc{
+    clear: both;   /*清除浮动，footer部分因为上面的内容浮动了*/
+}
+.con_main{
+    margin-top: 17px;
+}
+aside{
+    width:181px;
+    border: 1px solid #d7d7d7;
+    margin-right: 5px;
+    float:left;
+    background: #f3f3f3;
+}
+article{
+    width:812px;
+    float:left;
+
+}
+aside li {
+    list-style: none;
+    border-top: dashed 1px #d7d7d7;
+    display: block;
+    clear: both;      /*给li清除浮动后 li的大小只有他本身里面没有浮动的元素来撑开如这里的p（清除了浮动）*/
+}
+aside li:first-child{
+    border:none;
+}
+aside li p{
+    height:24px;
+    line-height: 24px;
+    font-weight: bold;
+    clear: both;
+    text-indent: 20px;
+
+}
+aside li div{
+   width:40%;
+    float: left;
+    margin-left: 20px;
+}
+aside li div:last-child{
+    width:40%;
+    float: right;
+    margin-left: 0;
+}
+aside li div a{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+}
+.sn_2{
+    margin-bottom: 20px;
+}
+.sn_2_top{
+    height:33px;
+    line-height: 33px;
+    font-size: 12px;
+    text-indent: 10px;
+}
+.sn_2_btn{
+    width:100%;
+}
+.sn_2_btn li{
+    list-style: none;
+    float: left;
+    width:25%;
+    border-top:2px solid #cccccc ;
+}
+.sn_2_btn li:first-child{
+    border-top: 2px solid #096dba;
+}
+.sn_2_btn li div:first-child{
+    height:186px;
+    width:158px;
+    padding-left: 24px;
+}
+.sn_2_btn li div img{
+    margin-top: 40px;
+}
+.sn_2_btn li div p:first-child{
+    line-height: 20px;
+    width:142px;
+    margin: 20px 0 0 30px;
+}
+.sn_2_btn li div p:last-child{
+    color:#d4107e;
+    text-align: center;
+    height:20px;
+    line-height: 20px;
+    width:142px;
+    margin-top: 20px;
+}
+article{
+    margin-bottom: 60px;
+}

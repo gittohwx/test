@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>点击添加索引</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body,ul{
+				margin: 0;
+				padding: 0;
+			}
+			#content{
+				width:500px;
+				height:500px;
+				margin: 80px auto;
+				border:1px solid #c1c1c1;
+				position: relative;
+
+			}
+			#content input {
+				width:40px;
+				height:40px;
+				display: inline-block;
+				background:#2f9ad8;
+				position: absolute;
+				right:30px;
+				top:20px;
+				border:none;
+				color:#fff;
+				outline: none;
+				cursor:pointer;
+			}
+			#content input:first-of-type{
+				right:30px;
+				top:20px;
+			}
+			#content input:last-of-type{
+				right:30px;
+				top:80px;
+			}
+			#content li{
+
+				list-style: none;
+				width:300px;
+				height:30px;
+				padding-left:30px;
+				margin-top: 10px;
+				margin-left:20px;
+				background: #75daf1;
+				border-radius:10px 10px; 
+				color:#fff;
+				line-height: 30px;
+				font-weight: bold;
+				cursor:pointer;
+			}
+
+		</style>
+		
+		<script>
+			window.onload=function(){
+				var Div=document.getElementById('content');
+				var Btns=Div.children;
+				var Ul=Div.children[2];
+				var Lis=Ul.children;
+				for(var i=0; i<Lis.length;i++){
+					Lis[i].index=i;	//添加索引
+					Lis[i].onclick=function(){
+						alert(this.index+1);
+
+					}
+
+				}
+				Btns[0].onclick=function(){
+					var li=document.createElement('li');
+					var len=Lis.length;
+					li.innerHTML=len+1;
+					li.onclick=fun; //给添加的元素绑定事件
+					Ul.appendChild(li);
+
+					function fun(){
+						alert(len+1);
+					}
+				}
+
+				//删除节点
+				Btns[1].onclick=function(){
+					if(Ul.lastElementChild){
+						Ul.removeChild(Ul.lastElementChild)
+					}else{
+
+						alert('没有可以删除的节点');
+					}
+				}
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<input type="button" value="添加">
+			<input type="button" value="删除">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

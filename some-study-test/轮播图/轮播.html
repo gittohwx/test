@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>轮播图</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body,ul{
+				margin: 0;
+				padding: 0;
+
+			}
+			#content{
+				width:500px;
+				height:325px;
+				margin: 80px auto;
+				border:1px solid #000;
+				position: relative;
+
+			}
+			#content span{
+				padding: 10px 14px;
+				
+				background:rgba(0,0,0,0.5);
+				color:#fff;
+				text-align: center;
+				position: absolute;
+				font-weight: bold;
+				border-radius: 16px;
+				opacity: 0.5;
+				cursor:pointer;
+
+			}
+			#content span:hover{
+				opacity: 1;
+				background:#B7CC2C;
+
+			}
+			#content span:first-child{
+				left:10px;
+				top:162px;
+				
+			}
+			#content span:nth-child(2){
+				right:10px;
+				top:162px;
+				
+			}
+			#ico{
+				position: absolute;
+				left: 160px;
+				bottom: 10px;
+			}
+			#ico li{
+				padding:4px 8px;
+				background: #ccc;
+				list-style: none;
+				display: inline-block;
+				border-radius: 14px;
+				cursor:pointer;
+				margin-left: 4px;
+				font-size: 6px;
+				color:#2D2927;
+
+			}
+			#ico .on{
+				background: #FF4400;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+
+				var Div=document.getElementById('content');
+				var Spans=Div.getElementsByTagName('span');
+				var Img=Div.getElementsByTagName('img')[0];
+				var Ico=document.getElementById('ico');
+				
+				var arrImg=['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg','images/6.jpg','images/7.jpg','images/8.jpg'];
+
+				var timer=null;
+				var num=0;
+				var len=arrImg.length;
+				
+				
+				//自动添加li
+				for(var i=1;i<=len; i++){
+					Ico.children[0].innerHTML+='<li>'+i+'</li>';
+
+				}
+				
+				
+
+				var Lis=Ico.children[0].children; //获取每个li
+				Lis[0].setAttribute('class','on');
+				//定时器让图片切换
+				//先给第一个li加on属性
+				//Lis[num].setAttribute('class','on'); 
+				
+				timer=setInterval(function(){
+					num++;
+					if(num%len==0){
+						num=0;
+					}
+					Img.src=arrImg[num];
+					Lis[num].setAttribute('class','on');
+					if(num==0){
+						Lis[len-1].setAttribute('class','');
+						
+					}else{
+						Lis[num-1].setAttribute('class','');
+					}
+					
+					
+					
+				},1000);
+
+				//鼠标移上去清除定时器
+				Div.onmouseover=function(){
+					clearInterval(timer);
+						//num=num-1;		//消除定时器停了还自增了一的影响;
+					
+					//执行点击小按钮切换
+					for(var i=0;i<len; i++){
+						
+						//通过闭包解决点击的永远是8的问题
+						(function(a){
+							Lis[a].onclick=function(){
+								//alert(a);
+									num=a;
+								//alert(num);
+								Lis[num].setAttribute('class','');
+								Img.src=arrImg[a];
+								//清除每个span元素上的on
+								for(var j=0; j<len; j++){
+									this.parentNode.children[j].setAttribute('class','');
+								
+								}
+								this.setAttribute('class','on');
+							}
+						})(i)
+
+					}
+					
+					
+					
+					//执行点击左右切换操作
+					Spans[0].onclick=function(){
+						//alert(num);
+						num--;
+						//alert(num);
+						if(num<0){
+							num=len-1;
+						}
+						Img.src=arrImg[num];
+						Lis[num].setAttribute('class','on');
+						//alert(num-1);
+						
+						if(num==len-1){
+							Lis[0].setAttribute('class','');
+						}else{
+							Lis[num+1].setAttribute('class','');
+						}
+						
+						
+						
+						
+
+					}
+					Spans[1].onclick=function(){
+						num++;
+						if(num%len==0){
+							num=0;
+						}
+						Img.src=arrImg[num];
+						Lis[num].setAttribute('class','on');
+						if(num==0){
+							Lis[len-1].setAttribute('class','');
+						}else{
+							Lis[num-1].setAttribute('class','');
+						}
+						
+					}
+
+					
+					
+					
+					
+						
+				}
+				//重新开定时器
+				Div.onmouseout=function(){
+					timer=setInterval(function(){
+
+					Img.src=arrImg[num%len];
+					
+					if(num!=0){
+						Lis[num-1].setAttribute('class','');
+					
+					}else{
+						Lis[len-1].setAttribute('class','');
+					}
+					Lis[num].setAttribute('class','on');
+					num++;
+					if(num%len==0){
+						num=0;
+					}
+
+				},1000);
+
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<span><</span>
+			<span>></span>
+			<img src="images/1.jpg">
+			<div id="ico">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

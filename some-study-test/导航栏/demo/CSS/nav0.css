@@ -1,0 +1,109 @@
+body{
+    margin:0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+ul{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style: none;
+    background: #2b2a77;
+}
+a{
+    text-decoration: none;
+    color:#fff;
+}
+#nav{
+    width:498px;
+    height:30px;
+
+    margin: 50px auto 0;
+}
+.i_mun{
+    display: none;
+}
+.nav_menu{
+
+}
+.nav_menu .m_i{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 14px;
+    padding:0 24px;
+    text-align: center;
+    position: relative;
+    border-right: 1px solid #fff;
+    -webkit-transition: background 1s linear;
+    -o-transition: background 1s linear;
+    -ms-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    transition: background 1s linear;
+}
+.nav_menu .m_i:last-child{
+    border:none;
+}
+.nav_menu .m_i:hover {
+    background: #ef0a0f;
+}
+.nav_menu .m_i:hover .i_mun{
+    display: block;
+}
+.nav_menu .m_i .i_mun{
+    position: absolute;
+    left:-14px;
+   padding-top: 10px;
+}
+.nav_menu .m_i .i_mun .i_mun_li{
+    background: #0cfff5;
+    width: 90px;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-transition:width  1s linear;
+    -moz-transition:width  1s linear;
+    -o-transition:width  1s linear;
+    -ms-transition:width  1s linear;
+    transition:width  1s linear;
+}
+.nav_menu .m_i .i_mun .i_mun_li:hover{
+    background: #ccc;
+    text-align: center;
+    width: 100px;
+    padding: 0;
+}
+.nav_menu .m_i .i_mun .i_mun_li a{
+    color:#000;
+}
+.nav_menu .m_i .i_mun .i_mun_ul{
+    display: none;
+    position: absolute;
+    top:0;
+    right:-100px;
+
+}
+.nav_menu .m_i .i_mun .i_mun_ul li{
+    width: 100px;
+    text-align: center;
+    background: #cccccc;
+}
+.nav_menu .m_i .i_mun .i_mun_li{
+    position: relative;
+
+}
+.nav_menu .m_i .i_mun .i_mun_li:hover .i_mun_ul{
+    display: block;
+}
+.nav_menu .m_i .i_mun .i_mun_li .i_mun_ul li:hover{
+    background: #ef0a0f;
+}
+.ad{
+	width:960px;
+	height:200px;
+	margin:10px auto;
+}
+img{
+	width:960px;
+	height:200px;
+}

@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding:0;
+}
+#content{
+    width:300px;
+    height:400px;
+    margin: 50px auto;
+    border: 1px solid #000;
+}
+#show{
+    width:300px;
+    height:40px;
+    margin-bottom: 40px;
+}
+#show input{
+    width:286px;
+    height:34px;
+    background: #ccc;
+    text-align: right;
+    padding-right:10px;
+    outline: none;
+}
+#num{
+    width:170px;
+    height:202px;
+    display: inline-block;
+   margin-bottom: 14px;
+    margin-left: 14px;
+
+}
+#num input{
+    width: 40px;
+    height:40px;
+    margin-right: 10px;
+    margin-bottom: 14px;
+
+}
+#num input:nth-child(10){
+    width: 98px;
+}
+#sign{
+    width:100px;
+    height:202px;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+#sign input{
+    width: 40px;
+    height:40px;
+    margin-bottom: 14px;
+    text-align: center;
+
+}
+#result{
+    width: 100%;
+}
+.result p{
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    clear: both;
+}
+#result input{
+    width:40px;
+    height:40px;
+    display: inline-block;
+    float: right;
+    margin-right: 12px;
+
+}

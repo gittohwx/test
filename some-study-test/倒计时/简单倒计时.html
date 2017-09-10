@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>简单倒计时</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			#content{
+				width: 500px;
+				height:200px;
+				margin:100px auto;
+				border: #ccc solid 1px;
+
+			}
+			#content span{
+				display: inline-block;
+				line-height: 200px;
+				width: 500px;
+				height:200px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 18px;
+				margin:0 auto;
+			}
+		</style>
+		
+		<script>
+				window.onload=function(){
+					var div=document.getElementById('content');
+					var span=div.getElementsByTagName('span')[0];
+					var timer=null;
+					var str='';
+					
+					var iNew=new Date(2017,4,25,8,18,1); //在定时器外面设置目标时间
+					var t=0;
+					clearInterval( timer );
+					countDown();
+					timer=setInterval(function(){
+						countDown();
+						
+					},1000);
+
+					function countDown(){
+						var iNow=new Date();	//获取当前时间
+						t=Math.floor((iNew - iNow)/1000);//转换成秒
+						if(t>=0){
+							var day=Math.floor(t/86400);
+							var hour=Math.floor(t%86400/3600);
+							var minute=Math.floor(t%86400%3600/60);
+							var second=t%60;
+							 str='还剩:&nbsp'+day+'天&nbsp'+hour+'小时&nbsp'+minute+'分&nbsp'+second+'秒&nbsp';
+							
+							
+							span.innerHTML=str;
+						}else{
+							clearInterval( timer );
+						}
+
+					}
+				}
+
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<span></span>
+		</div>
+	</body>
+
+</html>

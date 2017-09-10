@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>多列式布局和伸缩式布局</title>
+		<meta charset="utf-8">
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				background:#004050;
+				width:100%
+				height:100%;
+			}
+			.content{
+				display: -webkit-flex;
+				height:480px;
+				width:90%;
+				color:#fff;
+				margin:70px auto;
+				
+				
+			}
+			.content .left{
+				-webkit-flex: 4;
+				height:480px;
+				margin-right:70px;
+			}
+			.left_row1{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+				
+			}
+			.left_r1_column1{
+				margin-right:8px;
+				-webkit-flex: 1;
+				height:100%;
+				float:left;
+				
+			}
+			.left_r1_column1a{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+				margin-bottom:8px;
+			}
+			.l_r1_c1_1{
+				-webkit-flex: 1;
+				height:100%;
+				background:#9fb83f;
+				float:left;
+				margin-right:8px;
+				
+				
+				}
+			.l_r1_c1_2{
+				-webkit-flex: 1;
+				height:100%;
+				background:#345e9b;
+				float:left;
+				
+				
+			}
+			.left_r1_column1b{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+			}
+			.l_r1_c1_3{
+				-webkit-flex: 1;
+				height:100%;
+				background:#ffc71d;
+				float:left;
+				margin-right:8px;
+				
+			}
+			.l_r1_c1_4{
+				-webkit-flex: 1;
+				height:100%;
+				background:#388fef;
+				float:left;
+			}
+			.left_r1_column2{
+				
+				height:100%;
+				-webkit-flex: 2;
+				float:left;
+			}
+			.left_r1_column2a{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+				margin-bottom:8px;
+			}
+			.l_r1_c2_1{
+				-webkit-flex: 1;
+				height:100%;
+				background:#11a911;
+				float:left;
+				margin-right:8px;
+				}
+			.l_r1_c2_2{
+				-webkit-flex: 1;
+				height:100%;
+				background:#bb244d;
+				float:left;
+			}
+			.left_r1_column2b{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+			}
+			.l_r1_c2_3{
+				-webkit-flex: 1;
+				height:100%;
+				background:#a511ac;
+				float:left;
+				margin-right:8px;
+			}
+			.l_r1_c2_4{
+				-webkit-flex: 1;
+				height:100%;
+				background:#bb254e;
+				float:left;
+			}
+			
+			
+			.left_row2{
+				display:-webkit-flex;
+				width:100%;
+				height:50%;
+				margin-top:16px;
+			}
+			
+			.left_r2_column1{
+				-webkit-flex:2;
+				height:100%;
+				float:left;
+				margin-right:8px;
+				
+			}
+			.left_r2_column1a{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+				margin-bottom:8px;
+			}
+			.l_r2_c1_1{
+				-webkit-flex: 1;
+				height:100%;
+				background:#9fb940;
+				float:left;
+				margin-right:8px;
+				}
+			.l_r2_c1_2{
+				-webkit-flex: 1;
+				height:100%;
+				background:#ffc71b;
+				float:left;
+			}
+			.left_r2_column1b{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+			}
+			.l_r2_c1_3{
+				-webkit-flex: 1;
+				height:100%;
+				background:#39629e;
+				float:left;
+				margin-right:8px;
+			}
+			.l_r2_c1_4{
+				-webkit-flex: 1;
+				height:100%;
+				background:#a510ac;
+				float:left;
+			}
+			.left_r2_column2{
+				-webkit-flex:1;
+				height:100%;
+				float:left;
+			}
+			.left_r2_column2a{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+				margin-bottom:8px;
+			}
+			.l_r2_c2_1{
+				-webkit-flex:1;
+				height:100%;
+				background:#9eb83e;
+				float:left;
+				margin-right:8px;
+				}
+			.l_r2_c2_2{
+				-webkit-flex:1;
+				height:100%;
+				background:#db5a35;
+				float:left;
+			}
+			.left_r2_column2b{
+				width:100%;
+				height:50%;
+				display: -webkit-flex;
+			}
+			.l_r2_c2_3{
+				-webkit-flex:1;
+				height:100%;
+				background:#bd2a51;
+				float:left;
+				margin-right:8px;
+			}
+			.l_r2_c2_4{
+				-webkit-flex:1;
+				height:100%;
+				background:#3a90f0;
+				float:left;
+			}
+			
+			.content .right{
+				-webkit-flex: 1;
+				height:480px;
+			}
+			.right_row1{
+				width:100%;
+				height:50%;
+				margin-bottom:16px;
+				
+				
+			}
+			.right_r1_row1{
+				width:100%;
+				height:50%;
+				background:#26764c;
+				margin-bottom:8px;
+			}
+			.right_r1_row2{
+				width:100%;
+				height:50%;
+				display:-webkit-flex;
+			}
+			.r_r1_r2_c1{
+				-webkit-flex:1;
+				height:100%;
+				background:#864480;
+				float:left;
+				margin-right:8px;
+			}
+			.r_r1_r2_c2{
+				-webkit-flex:1;
+				height:100%;
+				background:#368eef;
+				float:left;
+			}
+			.right_row2{
+				width:100%;
+				height:50%;
+				
+			}
+			.right_r2_row1{
+				width:100%;
+				height:50%;
+				background:#da5730;
+				margin-bottom:8px;
+			}
+			.right_r2_row2{
+				width:100%;
+				height:50%;
+				display:-webkit-flex;
+			}
+			.r_r2_r2_c1{
+				-webkit-flex:1;
+				height:100%;
+				background:#0aa60a;
+				float:left;
+				margin-right:8px;
+			}
+			.r_r2_r2_c2{
+				-webkit-flex:1;
+				height:100%;
+				background:#ffc512;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="left">
+				
+				<div class="left_row1">
+					<div class="left_r1_column1">
+						<div class="left_r1_column1a">
+							<div class="l_r1_c1_1">store</div>
+							<div class="l_r1_c1_2">Xbox</div>
+						</div>
+						<div class="left_r1_column1b">
+							<div class="l_r1_c1_3">Maps</div>
+							<div class="l_r1_c1_4">Internet Explorer</div>
+						</div>
+					</div>
+					<div class="left_r1_column2">
+						<div class="left_r1_column2a">
+							<div class="l_r1_c2_1">Photos</div>
+							<div class="l_r1_c2_2">Calendar</div>
+						</div>
+						<div class="left_r1_column2b">
+							<div class="l_r1_c2_3">Messaging</div>
+							<div class="l_r1_c2_4">People</div>
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="left_row2">
+					<div class="left_r2_column1">
+					<div class="left_r2_column1a">
+						<div class="l_r2_c1_1">solitaire</div>
+						<div class="l_r2_c1_2">Search</div>
+					</div>
+					<div class="left_r2_column1b">
+						<div class="l_r2_c1_3">XBox Companion</div>
+						<div class="l_r2_c1_4">setting</div>
+					</div>				
+					</div>
+					<div class="left_r2_column2">
+						<div class="left_r2_column2a">
+							<div class="l_r2_c2_1">Mail</div>
+							<div class="l_r2_c2_2">video</div>
+						</div>
+						<div class="left_r2_column2b">
+							<div class="l_r2_c2_3">Camera</div>
+							<div class="l_r2_c2_4">Weather</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				
+				<div class="right_row1">
+					<div class="right_r1_row1">Music</div>
+					<div class="right_r1_row2">
+						<div class="r_r1_r2_c1">Skydrive</div>
+						<div class="r_r1_r2_c2">Remote Desktop</div>
+					</div>
+				</div>
+				<div class="right_row2">
+					<div class="right_r2_row1">Finance</div>
+					<div class="right_r2_row2">
+						<div class="r_r2_r2_c1">Reader</div>
+						<div class="r_r2_r2_c2">Share</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>

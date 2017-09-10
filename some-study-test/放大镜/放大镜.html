@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>放大镜</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body{
+				margin:0;
+				paddong:0;
+			}
+			#content{
+				width:600px;
+				height:500px;
+				border:#ccc 1px solid;
+				margin:100px auto;
+			}
+			#content div{
+				width:280px;
+				height:310px;
+				float:left;
+				border:#ccc 1px solid;
+				margin-left: 10px;
+				margin-top:20px;
+			}
+			#content div:first-child{
+				position: relative;
+			}
+			#content div:first-child:hover{
+				cursor: move;
+			}
+			#content div:last-child{
+				display: none;
+				position: relative;
+				overflow: hidden;
+			}
+			#content div:first-child img{
+				width:278px;
+				height:300px;
+				margin-top:10px;
+			}
+			#content div:last-child img{
+				width:278px;
+				height:300px;
+				position: absolute;
+				left:0px;
+				top:0px;
+			}
+			#content div:last-child .on{
+				transform:scale(3,3);
+			}
+			#small-box{
+				display: none;
+				position: absolute;
+				left:0;
+				top:0;
+				width:100px;
+				height:100px;
+				background: #C18145;
+				opacity: 0.4;
+			}
+		</style>
+		
+		<script>
+			window.onload=function(){
+				var Div=document.getElementById('content');
+				var SmallBox=document.getElementById('small-box');
+				var Divs=Div.children;
+				var Imgs=Div.getElementsByTagName('img');
+					Divs[0].onmouseover=function(ev){
+						Divs[1].style.display='block';
+						SmallBox.style.display="inline-block"
+						Divs[0].onmousemove=function(ev){
+							var ev=ev||event;
+							//获取滚动条的高
+							var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+							//物体相对浏览器边框的距离
+							var disX=ev.clientX-SmallBox.offsetWidth/2; 
+							var disY=ev.clientY-SmallBox.offsetHeight/2;
+							//span的定位父级到浏览器边框的距离
+							var x=SmallBox.offsetParent.offsetLeft;
+							var y=SmallBox.offsetParent.offsetTop;
+							var L=disX-x;
+							var T=disY-y+scrollTop;
+							console.log(SmallBox.offsetTop);
+							//限制范围
+								if(L<0){
+									L=0;
+								}else if(L>Divs[0].offsetWidth-SmallBox.offsetWidth){
+									L=Divs[0].offsetWidth-SmallBox.offsetWidth;
+								}else if(T<=0){
+										T=0;
+								}else if(T>=Divs[0].offsetHeight-SmallBox.offsetHeight){
+									T=Divs[0].offsetHeight-SmallBox.offsetHeight;
+										
+								}
+							SmallBox.style.left=L+'px';
+							SmallBox.style.top=T+'px';
+							//span小块移动放大图片
+							SmallBox.onmousemove=function(ev){
+								Imgs[1].className='on';
+								var ev=ev||event;
+								var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+								var disx=ev.clientX-Divs[0].offsetLeft;
+								var disy=ev.clientY-Divs[0].offsetTop+scrollTop;
+								Imgs[1].style.left=(Divs[0].offsetWidth+disx)-(disx)*3+"px";
+								Imgs[1].style.top=(Divs[0].offsetHeight+disy)-(disy)*3+"px";
+							}
+							
+							
+						}
+						
+					}
+					Divs[0].onmouseout=function(){
+						Divs[1].style.display='';
+						SmallBox.style.display="";
+
+					}
+
+
+
+			}
+
+
+
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<div>
+				<span id="small-box"></span>
+				<img src="iphone_se_large.jpg">
+			</div>
+			<div>
+				<img src="iphone_se_large.jpg">
+			</div>
+		</div>
+	</body>
+
+</html>

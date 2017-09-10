@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>9*9乘法表</title>
+		<meta charset="utf-8">
+		<style>
+		.span{
+			height:50px;
+			width:20px;
+			margin:10px;
+		}
+		</style>
+		<script>
+			window.onload=function(){
+				var oContent=document.getElementById('content');
+				var result="<table><caption>九九乘法表</caption>"
+				for(var i=1; i<10;i++){
+					result+="<tr>"
+					for( var j=1; j<10;j++){
+						if(j<i){j=i;}
+						 result+="<td>"+i+"*"+j+"="+(i*j)+"</td>";
+						
+					}
+					 result+="</tr>"
+				}
+				result+="</table>";
+				
+				oContent.innerHTML=result;
+			}
+		</script>
+	</head>
+	<body>
+	<div id="content">
+	</div>
+	</body>
+</html>

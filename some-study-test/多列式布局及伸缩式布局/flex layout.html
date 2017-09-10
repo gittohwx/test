@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>虚拟winphone布局</title>
+	<style>
+		html{
+			height: 100%;
+		}
+		body{
+			font-family: "microsoft yahei";
+			height: 100%;
+			margin:0px;
+			background: #004050;
+			color:#fff;
+			display: flex;
+			flex-flow:column nowrap;
+		}
+		header{
+			font-size:40px;
+			font-weight: bold;
+			padding:30px 0px 40px 75px;
+		}
+		.container{
+			padding:0px 75px 100px;
+			flex:1;
+			display: flex;
+			flex-flow:row wrap;
+		}
+		.content{
+			margin-right: 75px;
+			display: flex;
+			flex-flow:column wrap;
+			flex:3;
+		}
+		.aside{
+			display: flex;
+			flex-flow: column wrap;
+			flex:1;
+		}
+		.box{
+			flex:1;
+			display: flex;
+			flex:row wrap;
+			justify-content:space-between;
+		}
+		.box1,.box2,.box3,.box5,.box6,.box7{
+			margin-bottom: 10px;
+		}
+		.box1 div:first-child{
+			margin-right: 10px;
+			background:#9BB537;
+			flex:1;
+		}
+		.box1 div:nth-child(2){
+			margin-right: 10px;
+			background:#345E9B;
+			flex:1;
+		}
+		.box1 div:nth-child(3){
+			margin-right: 10px;
+			background:#0BA60B;
+			flex:2;
+		}
+		.box1 div:last-child{
+			background:#BA234C;
+			flex:2;
+		}
+		.box2 div:first-child{
+			margin-right: 10px;
+			background:#FFC81F;
+			flex:1;
+		}
+		.box2 div:nth-child(2){
+			margin-right: 10px;
+			background:#3D92F0;
+			flex:1;
+		}
+		.box2 div:nth-child(3){
+			margin-right: 10px;
+			background:#A30DAB;
+			flex:2;
+		}
+		.box2 div:last-child{
+			background:#BB244C;
+			flex:2;
+		}
+		.box3 div:first-child{
+			margin-right: 10px;
+			background:#9FB940;
+			flex:2;
+		}
+		.box3 div:nth-child(2){
+			margin-right: 10px;
+			background:#FFC71C;
+			flex:2;
+		}
+		.box3 div:nth-child(3){
+			margin-right: 10px;
+			background:#9DB63B;
+			flex:1;
+		}
+		.box3 div:last-child{
+			background:#DB5B36;
+			flex:1;
+		}
+		.box4 div:first-child{
+			margin-right: 10px;
+			background:#39629D;
+			flex:2;
+		}
+		.box4 div:nth-child(2){
+			margin-right: 10px;
+			background:#A208A9;
+			flex:2;
+		}
+		.box4 div:nth-child(3){
+			margin-right: 10px;
+			background:#BA234C;
+			flex:1;
+		}
+		.box4 div:last-child{
+			background:#338CEF;
+			flex:1;
+		}
+		.box5{
+			background: #27774D;
+		}
+		.box6 div:first-child{
+			margin-right: 10px;
+			background: #85437F;
+			flex:1;
+		}
+		.box6 div:last-child{
+			background: #3A90F0;
+			flex:1;
+		}
+		.box7{
+			background: #DB5B35;
+		}
+		.box8 div:first-child{
+			margin-right: 10px;
+			background: #0FA80F;
+			flex:1;
+		}
+		.box8 div:last-child{
+			background: #FFC616;
+			flex:1;
+		}
+		div{
+			position: relative;
+		}
+		.box span{
+			font-size: 12px;
+			position: absolute;
+			left: 15px;
+			bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<span>Metro Demo</span>
+	</header>
+	<div class="container">
+		<div class="content">
+			<div class="box box1">
+				<div><span>Store</span></div>
+				<div><span>Xbox Live Games</span></div>
+				<div><span>Photos</span></div>
+				<div><span>Calendar</span></div>
+			</div>
+			<div class="box box2">
+				<div><span>Maps</span></div>
+				<div><span>Internet Explorer</span></div>
+				<div><span>Messaging</span></div>
+				<div><span>People</span></div>
+			</div>
+			<div class="box box3">
+				<div><span>Solitaire</span></div>
+				<div><span>Search</span></div>
+				<div><span>Mail</span></div>
+				<div><span>Video</span></div>
+			</div>
+			<div class="box box4">
+				<div><span>Xbox Companion</span></div>
+				<div><span>Setting</span></div>
+				<div><span>Camera</span></div>
+				<div><span>Weather</span></div>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="box box5"><span>Music</span></div>
+			<div class="box box6">
+				<div><span>Skydrive</span></div>
+				<div><span>Remote Desktop</span></div>
+			</div>
+			<div class="box box7"><span>Finance</span></div>
+			<div class="box box8">
+				<div><span>Reader</span></div>
+				<div><span>Share</span></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

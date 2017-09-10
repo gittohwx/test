@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>获取元素</title>
+	<meta charset="UTF-8">
+	<style>
+		.list{
+			width:200px;
+			height:200px;
+			font-size:16px;
+		}
+		li{margin-bottom:20px;}
+		.tab1{display:block;}
+		.tab2{display:none;}
+		.tab3{display:none;}
+	</style>
+	
+</head>
+<body>
+	<div class="list tu">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</div>
+	<div class="groups">
+		<div class="group tab1">内容一</div>
+		<div class="group tab2">内容二</div>
+		<div class="group tab3">内容三</div>
+	</div>
+	<script>
+		window.onload=function(){
+			var aList=document.getElementsByClassName('list');
+			var oDiv=document.getElementsByClassName('groups');
+			var ul=document.getElementsByTagName('ul')[0];
+			var aLi=ul.children;
+			var aDiv=oDiv[0].children;
+			for(var i=0;i<aLi.length;i++){
+				(function(i){
+					aLi[i].onclick=function(){
+						for(var j=0;j<aLi.length;j++){
+							aDiv[j].style.display="none";
+						}
+						aDiv[i].style.display="block";
+					}
+				})(i);
+			}
+		}
+	</script>
+</body>
+</html>

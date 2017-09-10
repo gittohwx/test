@@ -1,0 +1,346 @@
+/*去除默认样式*/
+body{
+    font-family:'Microsoft yaei';
+    font-size: 12px;
+    width:100%;
+    height:100%;
+}
+img{
+    border: 0;     /* 去除IE下img图片的黑边框*/
+}
+body,h1,h2,h3,h4,ul,li,p,span{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;      /* 去掉a标签的默认样式（下划线）*/
+    color:black;
+
+}
+/*-------------------------- 头部设置---------------------*/
+header{
+    width:100%;
+    height:116px;
+}
+.tcen{                       /*设置网页主题通用样式*/
+    width:1000px;
+    height:100%;
+    margin: 0 auto;
+}
+#hr1{
+    width:100%;
+    height:32px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #eeeeee;
+}
+.hr1_t{
+    background: url("../images/star.jpg") no-repeat 0 10px;
+
+}
+#hr1 a{
+    float:left;
+    margin-left: 18px;
+    line-height: 32px;
+}
+#hr1 p{
+    float: right;
+    margin-right:8px ;
+    line-height: 32px;
+}
+#hr1 span{
+    float: right;
+    margin-right: 8px ;
+    line-height: 32px;
+}
+#hr1 span:first-child{   /*设置样式没有绑定上*/
+    margin-right:30px;
+    margin-left: 8px;
+}
+#hr2{
+    background: #f62d2b;
+    width: 100%;
+    height:83px;
+
+}
+#hr2 .hr2_l{
+    width: 762px;
+    height:83px;
+    float:left;
+
+}
+#hr2 .hr2_l a img{
+    width:110px;
+    height:60px;
+    margin:12px 0 0 38px;
+
+}
+#hr2 .hr2_l .inp{
+    width:433px;
+    height:39px;
+    margin-top: 23px;
+    display: inline-block;
+    float:right;
+}
+input[placeholder="搜索我"]{
+    width:350px;
+    height:35px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    outline: none;
+    padding-left:10px;
+    font-size: 14px;
+    vertical-align: top;      /*让输入框和按钮对齐，防止一上一下的错位*/
+}
+.inp input[value="搜索"]{
+    width:69px;
+    height:39px;
+    background: #ff8c00;
+    color:#ffffff;
+    font-size: 14px;
+    border:none;
+    outline: none;            /* 去除输入框的光标*/
+    cursor: pointer;         /* 给标签加上手势光标*/
+    vertical-align: top;
+}
+#hr2 .hr2_r{
+    width:207px;
+    height:100%;
+    float:left;
+    margin-left: 31px;
+}
+.hr2_r_span{
+    width:145px;
+    height:35px;
+    background: #ff8800;
+    margin-top:23px;
+
+}
+#hr2 .hr2_r span{
+    line-height: 35px;
+    height:30px;
+
+
+}
+#hr2 .hr2_r span:first-child{
+    border-right: 1px solid #e27a00;
+    display: block;
+    width:87px;
+    height:34px;
+    text-indent: 40px;                  /*首行缩进*/
+    color:#fff;
+    float:left;
+    background: url("../images/shopcar.jpg") no-repeat 11px 8px;
+
+}
+#hr2 .hr2_r span:last-child{
+    border-left: 1px solid #ff9c01;
+    display: block;
+    width:56px;
+    height:34px;
+    text-indent: 19px;
+    color:#fff;
+    float:left;
+    background: url("../images/icon.jpg") no-repeat 33px 12px;
+}
+nav{
+    width: 100%;
+    height:35px;
+    background: #d30c0e;
+}
+nav ul{
+    width: 100%;
+    height:35px;
+}
+nav li{
+    list-style: none;
+    float:left;
+
+}
+nav li a{
+    color:#FFF;
+    font-weight:bold;
+}
+nav li{
+    width:100px;
+    height:35px;
+    line-height: 35px;
+    text-indent:33px;
+}
+nav ul .on{
+    background: #ff8c00;
+}
+nav li:first-child{
+    width:188px;
+    height:35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-indent:39px;
+}
+.sn1{
+    width:100%;
+    height:326px;
+}
+.sn1 .sn_left{
+    width:188px;
+    height:100%;
+    background: #f62d2b;
+    float:left;
+}
+.sn1 .sn_left li{
+    list-style: none;
+    width:100%;
+    height:42px;
+    margin-top: 24px;
+}
+.sn1 .sn_left li:first-child{
+    margin-top: 12px;
+}
+.sn1 .sn_left a{
+    color:#fff;
+    margin-right: 5px;
+}
+.sn1 .sn_left p{
+    text-indent: 10px;
+    line-height: 20px;
+}
+.sn1 .sn_left p:first-child{
+    font-weight:bold ;
+    font-size: 14px;
+}
+.sn1 .sn_left p:last-child a{
+    margin-right: 10px;
+}
+.sn1 .sn_right{
+    width:812px;
+    height:326px;
+    float:left;
+}
+.sn2{
+    width:100%;
+    height:475px;
+}
+.sn2 .sn_top{
+    width:100%;
+    height:75px;
+    background: url(../images/product-icon.jpg)no-repeat 0 15px;
+}
+.sn2 .sn_top span:first-child{
+    font-size: 22px;
+    height:75px;
+    line-height: 75px;
+    margin-left:58px;
+}
+.sn2 .sn_top span:last-child{
+    font-size: 11px;
+    height:75px;
+    line-height: 75px;
+    margin-right:25px;
+    float: right;
+}
+.sn2 .sn_left{
+    width:190px;
+    height:400px;
+    float: left;
+}
+.sn2 .sn_right{
+    width:810px;
+    height:400px;
+    float:right;
+}
+.sn2 .sn_right ul:first-child li{
+      float:left;
+      list-style: none;
+      width:200px;
+      height:279px;
+    border-top:1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+
+  }
+.sn2 .sn_right ul:first-child li img{
+    width:133px;
+    height:151px;
+    margin:46px 0 0 30px;
+}
+.sn2 .sn_right ul:first-child li h4{
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing:2px;         /*字符间隔*/
+    margin-top: 16px;
+}
+.sn2 .sn_right ul:first-child li p{
+    text-align: center;        /*p行间居中显示*/
+    line-height: 20px;
+    color:#ff7300;
+    font-weight: bold;
+}
+.sn2 .sn_right ul:last-child li{
+    float:left;
+    list-style: none;
+    width:200px;
+    height:116px;
+    border-top:1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 3px solid #ff7201;
+
+}
+.sn2 .sn_right ul:last-child li img{
+    width:54px;
+    height:80px;
+    margin:18px 18px 18px 30px;
+    float: left;
+}
+.sn2 .sn_right ul:last-child li h4{
+    width:84px;
+    margin-top: 32px;
+    float: left;
+
+}
+.sn2 .sn_right ul:last-child li:first-child h4{
+    color:#ff7300;
+}
+.sn2 .sn_right ul:last-child li p{
+    font-size: 14px;
+    height:24px;
+    line-height: 24px;
+}
+footer{
+    margin-top: 40px;
+    width:100%;
+    height:224px;
+    background: #d4d4d4;
+}
+.fr_top{
+    width:100%;
+    height:54px;
+    padding-top: 50px;
+}
+.fr_top p{
+    text-align: center;
+    height: 34px;
+    line-height: 24px;
+    font-weight: bold;
+}
+.fr_top p a{
+    margin-right: 4px;
+}
+.fr_top p span{
+    margin-right: 20px;
+}
+.fr_btm{
+    width:100%;
+    height:95px;
+}
+.fr_btm ul{
+    width:584px;
+    margin: 0 auto;
+}
+.fr_btm li {
+    list-style: none;
+    float: left;
+    margin-top: 36px;
+    margin-right: 24px;
+}
+.fr_btm li:last-child{
+    margin-right: 0;
+}
